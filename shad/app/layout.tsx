@@ -14,7 +14,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Learning ShadCN - Next.js - crash course",
+  title:
+    "Learning ShadCN - Next.js - crash course",
   description: "...",
 };
 
@@ -28,10 +29,19 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <nav>
-          <h1>Recipes</h1>
+        <nav className="bg-primary text-primary-foreground shadow-md fixed top-0 left-0 right-0 z-10">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between h-16">
+              <h1 className="text-2xl font-bold">
+                Recipes
+              </h1>
+              {/* You can add more nav items here if needed */}
+            </div>
+          </div>
         </nav>
-        {children}
+        <main className="pt-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          {children}
+        </main>
       </body>
     </html>
   );
